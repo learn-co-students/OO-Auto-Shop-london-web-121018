@@ -1,11 +1,21 @@
 class Car
 
-  attr_reader :make, :model
+  attr_reader :make, :model, :classification, :allcars, :owner
 
-  def initialize(make, model, classification)
+  @@allcars = []
+
+  def initialize(make, model, classification, owner)
     @make = make
     @model = model
     @classification = classification
+    @owner = owner
+    @@allcars << self
+
   end
+
+  def self.all
+    @@allcars
+  end
+
 
 end
